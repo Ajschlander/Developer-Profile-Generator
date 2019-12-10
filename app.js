@@ -15,6 +15,7 @@ getGitHubInfo = async (username) => {
     console.log(data.followers);
     console.log(data.following);
     console.log(data.public_repos);
+    generateHTML.generateHTML(data);
 }
 
 function getUserInput(){
