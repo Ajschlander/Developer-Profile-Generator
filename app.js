@@ -2,6 +2,7 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
 const generateHTML = require("./generateHTML.js");
+const convertFactory = require
 
 
 getGitHubInfo = async (username, colorPicked) => {
