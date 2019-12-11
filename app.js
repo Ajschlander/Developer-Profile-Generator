@@ -4,18 +4,17 @@ const axios = require("axios");
 const generateHTML = require("./generateHTML.js");
 
 
-getGitHubInfo = async (username) => {
+getGitHubInfo = async (username, colorPicked) => {
     let res = await axios.get("https://api.github.com/users/" + username);
     const data = res.data;
-    console.log(data.name);
-    console.log(data.html_url);
-    console.log(data.avatar_url);
-    console.log(data.bio);
-    console.log(data.location);
-    console.log(data.followers);
-    console.log(data.following);
-    console.log(data.public_repos);
-    generateHTML.generateHTML(data);
+    await fs.writeFile("index.html", generateHTML.generateHTML(data, colorPicked), function(err){
+        if(err){
+            return console.log(err);
+        }
+        else{
+            console.log("done");
+        }
+    });
 }
 
 function getUserInput(){
@@ -35,7 +34,7 @@ function getUserInput(){
     .then(answers => {
         const username = answers.username;
         const colorPicked = answers.color;
-        getGitHubInfo(username);
+        getGitHubInfo(username, colorPicked);
     });
 }
 

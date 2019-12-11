@@ -1,32 +1,4 @@
-const colors = {
-    green: {
-        wrapperBackground: "#E6E1C3",
-        headerBackground: "#C1C72C",
-        headerColor: "black",
-        photoBorderColor: "#black"
-    },
-    blue: {
-        wrapperBackground: "#5F64D3",
-        headerBackground: "#26175A",
-        headerColor: "white",
-        photoBorderColor: "#73448C"
-    },
-    pink: {
-        wrapperBackground: "#879CDF",
-        headerBackground: "#FF8374",
-        headerColor: "white",
-        photoBorderColor: "#FEE24C"
-    },
-    red: {
-        wrapperBackground: "#DE9967",
-        headerBackground: "#870603",
-        headerColor: "white",
-        photoBorderColor: "white"
-    }
-};
-
-function generateHTML(data, color) {
-    return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -52,7 +24,7 @@ function generateHTML(data, color) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[color].wrapperBackground};
+         background-color: #5F64D3;
          padding-top: 100px;
          }
          body {
@@ -94,8 +66,8 @@ function generateHTML(data, color) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[color].headerBackground};
-         color: ${colors[color].headerColor};
+         background-color: #26175A;
+         color: white;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -106,7 +78,7 @@ function generateHTML(data, color) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[color].photoBorderColor};
+         border: 6px solid #73448C;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -149,8 +121,8 @@ function generateHTML(data, color) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[color].headerBackground};
-           color: ${colors[color].headerColor};
+           background-color: #26175A;
+           color: white;
            margin: 20px;
          }
          
@@ -175,28 +147,28 @@ function generateHTML(data, color) {
         <div class="main">
          <div class="wrapper">
           <div class="photo-header">
-            <img src="${ data.avatar_url }">
+            <img src="https://avatars3.githubusercontent.com/u/29233041?v=4">
             <h1>Hi!</h1>
-            <h2>My name is ${ data.name }!</h2>
-            <p>Currently @ ${ data.company }</p>
+            <h2>My name is Austin Schlander!</h2>
+            <p>Currently @ Student at U of M</p>
             <div class="links-nav">
               <nav>
-                <a href="" class="nav-link"> ${ data.location } </a>
-                <a href="${ data.html_url }" class="nav-link">Github</a>
-                <a href="${ data.blog }" class="nav-link">Blog</a>
+                <a href="" class="nav-link"> Eagan, Minnesota </a>
+                <a href="https://github.com/Ajschlander" class="nav-link">Github</a>
+                <a href="" class="nav-link">Blog</a>
               </nav>
             </div>
           </div>
           <div class="container">
-            <h3>${ data.bio }</h3>
+            <h3>Hello and welcome to my GitHub profile! Here you can find all the projects that I have worked on and am currently working on.</h3>
             <div class="row">
               <div class="card col">
                 <h4>Public Repositories</h4>
-                <h5>${ data.public_repos }</h5>
+                <h5>11</h5>
               </div>
               <div class="card col">
                 <h4>Followers</h4>
-                <h5>${ data.followers }</h5>
+                <h5>8</h5>
               </div>
             </div>
             <div class="row">
@@ -206,7 +178,7 @@ function generateHTML(data, color) {
               </div>
               <div class="card col">
                 <h4>Following</h4>
-                <h5>${ data.following }</h5>
+                <h5>5</h5>
               </div>
             </div>
             
@@ -214,10 +186,4 @@ function generateHTML(data, color) {
          </div>
         </div>
       </body>
-      `
-}
-
-module.exports = {
-    generateHTML: generateHTML,
-    colors: colors
-}
+      
