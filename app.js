@@ -2,7 +2,11 @@ const fs = require("fs");
 const inquirer = require("inquirer");
 const axios = require("axios");
 const generateHTML = require("./generateHTML.js");
-const convertFactory = require
+const convertFactory = require("electron-html-to");
+
+const conversion = convertFactory({
+    converterPath: convertFactory.converters.PDF
+});
 
 
 getGitHubInfo = async (username, colorPicked) => {
@@ -16,6 +20,17 @@ getGitHubInfo = async (username, colorPicked) => {
             console.log("done");
         }
     });
+
+    await conversion({ html: generateHTML.generateHTML(data, colorPicked) }, function(err, result) {
+        if (err) {
+            return console.error(err);
+        }
+        
+        console.log(result.numberOfPages);
+        console.log(result.logs);
+        result.stream.pipe(fs.createWriteStream('./index.pdf'));
+        conversion.kill(); // necessary if you use the electron-server strategy, see bellow for details
+        });
 }
 
 function getUserInput(){
