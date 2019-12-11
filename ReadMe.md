@@ -6,7 +6,7 @@ A command line application that lets a user search for a github username and pic
 ![PDF View](assets/images/homeworkss.png)
 
 # GIF
-![GIF](assets/images/homeworkss.png)
+![GIF](assets/GIFs/homework.gif)
 
 # Deployment
 
