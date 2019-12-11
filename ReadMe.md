@@ -8,10 +8,6 @@ A command line application that lets a user search for a github username and pic
 # GIF
 ![GIF](assets/GIFs/homework.gif)
 
-# Deployment
-
-https://ajschlander.github.io/updated-portfolio/ 
-
 # Built With
 
 NodeJS, Inquierer, Axios, and GitHub API
